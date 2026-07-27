@@ -76,7 +76,7 @@ app.post("/payment-link", async (req, res) => {
       accept_partial: false,
       description: "Payment to Yashwanth",
 
-      callback_url: "http://localhost:3000/sucess.html",
+      callback_url: "https://payment-gateway-backend-ud1i.onrender.com",
       callback_method: "get",
     });
 
