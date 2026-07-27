@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #10b981;
+    --accent-light: #d1fae5;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+/* ===================== CARD ===================== */
+
+.container {
+    background: var(--white);
+    padding: 48px 40px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 28px;
+}
+
+/* ===================== INPUT ===================== */
+
+.price {
+    display: block;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    text-align: center;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 24px;
+}
+
+.price:focus {
+    border-color: var(--primary);
+}
+
+.price::placeholder {
+    color: #cbd5e1;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.price::-webkit-outer-spin-button,
+.price::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.price {
+    -moz-appearance: textfield;
+}
+
+/* ===================== BUTTON ===================== */
+
+button {
+    width: 100%;
+    padding: 14px 30px;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===================== FOOTER ===================== */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* ===================== SUCCESS PAGE ===================== */
+
+.success-container {
+    padding: 48px 40px 40px;
+}
+
+/* CSS-only animated checkmark */
+.checkmark-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 0 auto 24px;
+    position: relative;
+    animation: scaleIn 0.4s ease-out;
+}
+
+.checkmark-stem {
+    position: absolute;
+    width: 4px;
+    height: 26px;
+    background: var(--white);
+    top: 18px;
+    left: 36px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    animation: drawStem 0.3s 0.3s ease-out both;
+}
+
+.checkmark-kick {
+    position: absolute;
+    width: 4px;
+    height: 14px;
+    background: var(--white);
+    top: 34px;
+    left: 26px;
+    transform: rotate(-45deg);
+    border-radius: 2px;
+    animation: drawKick 0.3s 0.5s ease-out both;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes drawStem {
+    0% { height: 0; }
+    100% { height: 26px; }
+}
+
+@keyframes drawKick {
+    0% { height: 0; }
+    100% { height: 14px; }
+}
+
+.success-container h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 36px 24px;
+    }
+
+    .container h1 {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 26px;
+    }
+}
